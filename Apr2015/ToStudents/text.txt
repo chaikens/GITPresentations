@@ -1,0 +1,52 @@
+Syllabus: Assignments: Homework assignments will be posted on Blackboard. 
+For each programming assignment the student will pull a repository from 
+GIT into his/her itsunix account, add the assigned work and then push 
+that repository to our server for grading. Detailed instructions will 
+be in the first programming assignment. 
+
+
+This is your ssh key project.
+
+Programming Assignment 0: Instructions for making and emailing an ssh key.  
+Help for accessing the ssh login server where projects should be done.  
+Help for ssh-keygen failure.  Why must I do this key thing, what is 
+the role of GIT and what am I expected to do with it in 404? How can we
+find out more about GIT?
+
+
+This is your programming assignment 1.
+DUE: Thursday, Jan. 29, 11:59PM
+NOT ACCEPTED after Jan. 30, 11:59PM
+
+Programming Assignment 1:
+
+This is your programming assignment 2.
+
+Programming Assignment 2:
+
+This is your programming assignment 3.  20 regular credit points; up
+to 5 extra credit points.
+
+Must be pushed to git404.cs.albany.edu, NOT Blackboard
+DUE: Tuesday, Feb. 17, 11:59PM
+NOT ACCEPTED after Feb. 18, 11:59PM
+
+Programming Assignment 3:
+
+Programming Project 4.  
+Begin right after the Thu, Feb. 26 Lecture.
+Continue as more material is covered.
+DUE: Push to our git404 server Thu, March 12, 11:59PM
+NOT ACCEPTED after Fri, March 13, 11:59PM
+
+Programming Assignment 4:
+
+Programming Project 5.
+Begin it as soon as you get into the Sequential Circuits Homework.
+DUE: push to our git404.cs.albany.edu server April 12, 2015
+NOT ACCEPTED AFTER 11:59PM April 13, 2015.
+
+Programming Assignment 5:
+
+(To be created Programming Assignment 6, last one.)
+

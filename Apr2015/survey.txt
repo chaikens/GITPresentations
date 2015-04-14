@@ -1,0 +1,36 @@
+GIT survey
+
+It was easy to learn using GIT
+ 
+Strongly agree
+Agree
+Disagree
+Strongly disagree
+Don't have an opinion
+
+I could have used more guidance from the instructor in using GIT
+ 
+Strongly agree
+Agree
+Disagree
+Strongly disagree
+Don't have an opinion
+
+GIT is easier to use than the traditional turn-in program we have used in other classes
+ 
+Strongly agree
+Agree
+Disagree
+Strongly disagree
+Don't have an opinion
+
+Learning GIT makes me more competitive on the job market
+ 
+Strongly agree
+Agree
+Disagree
+Strongly disagree
+Don't have an opinion
+    
+ 
+

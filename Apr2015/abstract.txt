@@ -1,0 +1,19 @@
+Introducing GIT in a Large CS Major Course with Small Projects
+Seth Chaiken
+Mariya Zheleva
+Computer Science Department
+College of Computing and Information
+
+For the first time in our department's history, we have the students
+in a large lecture based undergraduate computer science major course
+use GIT.  The course is computer organization. It has about 6 small C
+programming projects which are required but supplemental to the main
+modalities of reading and written problem set assignments. GIT use is
+required by students to download programming project frameworks,
+document a history of incremental development and testing, and submit
+their work for grading.  We report some technical challenges and
+solutions, instructions and support given to the students, and our
+observations and preliminary survey and other feedback results.  The
+technology consists of git and ssh software for us and the students
+plus gitolite in a departmentally run Linux server.
+

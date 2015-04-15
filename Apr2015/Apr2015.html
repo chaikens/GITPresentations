@@ -25,12 +25,11 @@
 
 
 
+
   </style>
 </head>
 
 <body>
-
-
 
 <div class="slide">
 <h1>Introducing GIT in a Large CS Major Course with Small Projects</h1>
@@ -39,57 +38,53 @@
 
 <h2>Mariya Zheleva</h2>
 
-<h3>CS Department<br/>
-College of Computing and Information<br/>
-University at Albany<br/>
+<h3>CS Department<br />
+College of Computing and Information<br />
+University at Albany<br />
 </h3>
 
 <h3>April 15, 2015</h3>
-
 </div>
 
 <div class="slide">
 <ol>
-<li>Goals within course</li>
-<li>GIT use cases and subset</li>
-<li>Instructional materials</li>
-<li>Backend infrastructure--ssh+Gitolite+GIT</li>
-<li>Survey and lessons learned</li>
+  <li>Goals within course</li>
+  <li>GIT use cases and subset</li>
+  <li>Instructional materials</li>
+  <li>Backend infrastructure--ssh+Gitolite+GIT</li>
+  <li>Survey and lessons learned</li>
 </ol>
-
-
 </div>
 
 <div class="slide">
 <h1>Goals within course</h1>
+
 <h2>Subject=Computer Organization; programming is a minor component</h2>
-<h3>Computer Science emphasis: Coding simulations to help learn how hardware workss
-</h3>
+
+<h3>Computer Science emphasis: Coding simulations to help learn how hardware
+workss </h3>
 <ul>
-<li>A better C program turn-in system<br/>
-to teach students something up-to-date and useful<br/>
-to assign and grade more effectively
-</li>
-<li>Teach and enforce incremental development and testing practices</li>
-<li>To introduce an important and demanded collaborition and development tool
-</li>
+  <li>A better C program turn-in system<br />
+    to teach students something up-to-date and useful<br />
+    to assign and grade more effectively </li>
+  <li>Teach and enforce incremental development and testing practices</li>
+  <li>To introduce an important and demanded collaborition and development tool
+  </li>
 </ul>
 </div>
 
 <div class="slide">
 <h1>GIT use cases and subset</h1>
+
 <h2>Keys: </h2>
-<pre>
-ssh-keygen -t rsa
-mailx schaiken@albany.edu < .ssh/id_rsa.pub
-</pre>
+<pre>ssh-keygen -t rsa
+mailx schaiken@albany.edu &lt; .ssh/id_rsa.pub</pre>
+
 <h2>Clone:</h2>
-<pre>
-git clone git404@git404.cs.albany.edu:COProjects
-</pre>
+<pre>git clone git404@git404.cs.albany.edu:COProjects</pre>
+
 <h2>Unix/gcc commands:</h2>
-<pre>
-ls -l COProjects
+<pre>ls -l COProjects
 cd COProjects
 ls -l DataDemo
 ls -l DataDemo/DataDemo.c
@@ -97,62 +92,75 @@ cd DataDemo
 ls
 less DataDemo.c
 gcc DataDemo.c -o DataDemo
-./DataDemo
-</pre>
+ ./DataDemo</pre>
+
 <h2>Edit, status, commit with automatic add:</h2>
-Change C program so it prints your name instead of the professor's<br/>
+Change C program so it prints your name instead of the professor's<br />
+
 <pre>git status</pre>
-Answer to yourself: Which file is GIT tracking?</br>
-Answer to yourself: Which file(s) is GIT not tracking?</br>
+Answer to yourself: Which file is GIT tracking?<br />
+Answer to yourself: Which file(s) is GIT not tracking?<br />
+
 <pre>git commit -a -m "Profs name replace by mine."</pre>
-Answer to yourself: How is the report from the git status commanded 
-BEFORE you committed (with -a) the change to DataDemo.c <br/>
-COMPARE to the status report commanded AFTER that commit?
+Answer to yourself: How is the report from the git status commanded BEFORE you
+committed (with -a) the change to DataDemo.c <br />
+COMPARE to the status report commanded AFTER that commit? 
+
 <h2>2nd new version, git status and git log</h2>
-Make the C program do input instead of use literal data.<br/>
-<pre>
-git status
+Make the C program do input instead of use literal data.<br />
+
+<pre>git status
 git log</pre>
-git commit -a -m "A one line informative comment about the commit"
-<pre>
-git status
+git commit -a -m "A one line informative comment about the commit" 
+<pre>git status
 git log</pre>
+
 <h2>Unix script command</h2>
+
 <h2>push to get credit</h2>
-<pre>
-git push git404@git404.cs.albany.edu:submissions/YourNetID/COProjects master
-</pre>
+<pre>git push git404@git404.cs.albany.edu:submissions/YourNetID/COProjects master</pre>
 </div>
 
 <div class="slide">
 <h1>See what I turned in?</h1>
+
 <h2>EXPLANATIONS and WARNING were given!</h2>
-<pre>
-cd /tmp
+<pre>cd /tmp
 mkdir YourNetID
-cd YourNetID 
-</pre>
-The above two commands will keep other student's work out of your way
-because the /tmp directory is shared.
-<pre>
-git clone git404@git404.cs.albany.edu:submissions/YourNetID/COProjects
+cd YourNetID </pre>
+The above two commands will keep other student's work out of your way because
+the /tmp directory is shared. 
+<pre>git clone git404@git404.cs.albany.edu:submissions/YourNetID/COProjects
 cd COProjects
 cd
-cd COProjects
-</pre>
-OR
-<pre>
-cd ~/COProjects
-</pre>
-<pre>
-cd /tmp/YourNetID/COProjects 
+cd COProjects</pre>
+OR 
+<pre>cd ~/COProjects</pre>
+<pre>cd /tmp/YourNetID/COProjects 
 rm -rf /tmp/YourNetID
-cd ~/COProjects 
-</pre>
+cd ~/COProjects </pre>
 </div>
 
 <div class="slide">
 <h1>Instructional materials</h1>
+<ol>
+  <li><a
+    href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/404S15_syllabus.pdf">Syllabus</a></li>
+  <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/Prog0.pdf">Prog Asg
+    0</a></li>
+  <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/Prog1.pdf">Prog Asg
+    1</a></li>
+  <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/Prog2.pdf">Prog Asg
+    2</a></li>
+  <li><a
+    href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/DecodeControlProj.pdf">Prog
+    Asg 3</a></li>
+  <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/DigCircs1.pdf">Prog
+    Asg 4</a></li>
+  <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/SeqCirc1.pdf">Prog
+    Asg 5</a> </li>
+  <li>Prog Asg 6 (not done yet)</li>
+</ol>
 </div>
 
 <div class="slide">
@@ -174,16 +182,5 @@ cd ~/COProjects
 <div class="slide">
 <h1>t</h1>
 </div>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
-

@@ -26,6 +26,11 @@
 
 
 
+
+
+
+
+
   </style>
 </head>
 
@@ -51,7 +56,8 @@ University at Albany<br />
   <li>Goals within course</li>
   <li>GIT use cases and subset</li>
   <li>Instructional materials</li>
-  <li>Backend infrastructure--ssh+Gitolite+GIT</li>
+  <li>Backend infrastructure--ssh+<a
+    href="http://gitolite.com/gitolite/index.html">Gitolite</a>+GIT</li>
   <li>Survey and lessons learned</li>
 </ol>
 </div>
@@ -164,13 +170,117 @@ cd ~/COProjects </pre>
 </div>
 
 <div class="slide">
-<h1>Backend infrastructure--ssh+Gitolite+GIT</h1>
+<h1>More student requirements and use cases added later</h1>
+<ol>
+  <li>Capture program test dialog with script and commit it; so TESTING can be
+    GRADED!</li>
+  <li>Information for optional use of old versions: Find commit SHA hashes with
+    git log and retrieve with git checkout </li>
+  <li>Value of GIT explained briefly in lectures.</li>
+  <li>No GIT other lab technology questions in exams.</li>
+</ol>
 </div>
+
+<div class="slide">
+<h1>Backend infrastructure--ssh+Gitolite+GIT</h1>
+
+<h2>Choices:</h2>
+<ul>
+  <li>github.com--students can copy (usually but NOT ALWAYS good) unless you
+    pay.<br />
+    Pains: Students must transmit ssh keys to github, you or students must make
+    student repositories.</li>
+  <li>Very easy git server: Just put git (same as client) + SSH SERVER on a
+    host.<br />
+    Pains: (Student ssh keys), student server accounts, cumbersome access
+    control.</li>
+  <li><a href="https://about.gitlab.com/gitlab-com/">Gitorious (now GitLab)</a>
+    (free sw base for <a href="https://code.seas.harvard.edu/about">Harvard's
+    Engineering School code repo</a>) <br />
+    Hot news: Free Gitorious service will be shut down.<br />
+    Other similar products too.<br />
+    Free source but complex administration.</li>
+  <li><a href="http://gitolite.com/gitolite/index.html">Gitolite</a>:
+    EXCELLENT, lightweight SOLUTION! (Used by kernel.org, so it gotta be
+  good.)</li>
+  <li>Future step: Add a web browsing interface "should be" easy.</li>
+  <li>Harvard (and others) support some courses with virtual machine
+    "appliance" images.</li>
+</ul>
+
+<p></p>
+</div>
+
+<div class="slide">
+<h1>Gitolite server</h1>
+<ul>
+  <li>Host access, git and ssh-server install, and git404.cs.albany.edu dom.
+    name granted by sysadmin.)</li>
+  <li>All repositories are owned by one common user
+    (<strong><code>git404</code></strong> granted by sysadmin.)</li>
+  <li>Students and staff use urls (development repos not shown):<br />
+    <strong><code>git400@git400.cs.albany.edu:COProjects</code></strong><br />
+    <code><strong>git400@git400.cs.albany.edu:submissions/</strong></code><em>NetID</em><code><strong>/COProjects<em></em></strong></code></li>
+  <li>Gitolite installs a separate ssh hook TO THE GITOLITE SHELL in
+    <code><strong>~git404/.ssh/authorized_keys</strong></code><br />
+    FOR EACH USER identified by his/her ssh key.</li>
+  <li>relieving ssh key pains: One ssh command line login (Solaris) server,<br
+    />
+    where students command ssh-keygen and an email to albany.edu command. <br />
+    (UA NetIDs req'd. Prof. Chaiken used pine IMAP and emacs
+  semi-automatically)</li>
+  <li>Students clone and pull from
+    <code><strong>git400@git400.cs.albany.edu:COProjects</strong></code></li>
+  <li>Students push to
+    <code><strong>git400@git400.cs.albany.edu:submissions/</strong></code><em>NetID</em><code><strong>/COProjects<br
+    />
+    </strong></code>(optional: clone or pull to reclaim or verify
+  submissions)</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Gitolite user administration</h1>
+<pre>@prof =  ...
+@students = ...
+repo COProjects
+    RW     = @prof
+    R      = @students
+
+repo csi404
+    RW+     = @prof
+
+repo submissions/CREATOR/..*
+     C      = @students @prof
+     RW     = CREATOR
+     R      = @prof</pre>
+<code><strong>CREATOR</strong></code> is gitolite's wildcard feature (requested
+by a professor!) When a student first pushes to
+<code><strong>submissions/</strong></code><em>NetID</em><code><strong>/RepoName</strong></code>
+GITOLITE (not me!) initializes the remote repo. <br />
+We <code><strong>@prof</strong></code> people get their names with<br />
+<code><strong>ssh git404@git404.cs.albany.edu info</strong></code> <br />
+TA (David Vadney) scripted multiple <code><strong>git clone</strong></code>
+commands. <br />
+He and other TAs used <code><strong>gitk</strong></code> to browse commit
+messages and other student work. </div>
 
 <div class="slide">
 <h1>Survey and lessons learned</h1>
-</div>
 
+<h2>Open Source deployment requires experience, investigation, experimentation
+and testing</h2>
+It worked smoothly because Prof. Chaiken and his OS seniors and grad. students
+stumbled with the technology during the previous semester!<br />
+Several days (in total) of gitolite, ssh, git etc. study were needed.<br />
+Prof. C. has sysadmin privileges on the server to fix a directory protection
+mistake and investigate problems.<br />
+Prof. C. handled git questions and problems quickly by email--about half dozen
+ssh problems and a dozen git questions/problems in total. 
+
+<h2>Faculty impression: Very favorable, no major complaints.</h2>
+</div>
+<!--
 <div class="slide">
 <h1>t</h1>
 </div>
@@ -182,5 +292,6 @@ cd ~/COProjects </pre>
 <div class="slide">
 <h1>t</h1>
 </div>
+-->
 </body>
 </html>

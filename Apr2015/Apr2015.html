@@ -32,6 +32,7 @@
 
 
 
+
   </style>
 </head>
 
@@ -66,10 +67,11 @@ University at Albany<br />
 <div class="slide">
 <h1>Goals within course</h1>
 
-<h2>Subject=Computer Organization; programming is a minor component</h2>
+<h2>Subject=Computer Organization=how hardware works; programming is a minor
+component; 80 student lecture/homework course.</h2>
 
-<h3>Computer Science emphasis: Coding simulations to help learn how hardware
-workss </h3>
+<h3>Computer Science emphasis: To code simulations of the hardware. (Also gives
+coding practice.) </h3>
 <ul>
   <li>A better C program turn-in system<br />
     to teach students something up-to-date and useful<br />
@@ -81,7 +83,7 @@ workss </h3>
 </div>
 
 <div class="slide">
-<h1>GIT use cases and subset</h1>
+<h1>GIT use cases and (small) subset</h1>
 
 <h2>Keys: </h2>
 <pre>ssh-keygen -t rsa
@@ -101,7 +103,7 @@ less DataDemo.c
 gcc DataDemo.c -o DataDemo
  ./DataDemo</pre>
 
-<h2>Edit, status, commit with automatic add:</h2>
+<h2>Edit, status, commit with automatic add, Proj1 assignment: </h2>
 Change C program so it prints your name instead of the professor's<br />
 
 <pre>git status</pre>
@@ -113,7 +115,7 @@ Answer to yourself: How is the report from the git status commanded BEFORE you
 committed (with -a) the change to DataDemo.c <br />
 COMPARE to the status report commanded AFTER that commit? 
 
-<h2>2nd new version, git status and git log</h2>
+<h3>2nd version of Proj1; git status and git log</h3>
 Make the C program do input instead of use literal data.<br />
 
 <pre>git status
@@ -166,7 +168,8 @@ cd ~/COProjects </pre>
     Asg 4</a></li>
   <li><a href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/SeqCirc1.pdf">Prog
     Asg 5</a> </li>
-  <li>Prog Asg 6 (not done yet)</li>
+  <li>Prog Asg 6 (not created yet--simulate machine instruction decode and
+    execution)</li>
 </ol>
 </div>
 
@@ -178,19 +181,19 @@ cd ~/COProjects </pre>
   <li>Information for optional use of old versions: Find commit SHA hashes with
     git log and retrieve with git checkout </li>
   <li>Value of GIT explained briefly in lectures.</li>
-  <li>No GIT other lab technology questions in exams.</li>
+  <li>No GIT or other lab technology questions in exams.</li>
 </ol>
 </div>
 
 <div class="slide">
-<h1>Backend infrastructure--ssh+Gitolite+GIT</h1>
+<h1>Backend infrastructure:ssh+Gitolite+GIT</h1>
 
 <h2>Choices:</h2>
 <ul>
-  <li>github.com--students can copy (usually but NOT ALWAYS good) unless you
+  <li>github.com--students can copy (usually, but NOT ALWAYS good) unless you
     pay.<br />
-    Pains: Students must transmit ssh keys to github, you or students must make
-    student repositories.</li>
+    Pains: Students must make user names, transmit ssh keys to github, and make
+    their own remotes.</li>
   <li>Very easy git server: Just put git (same as client) + SSH SERVER on a
     host.<br />
     Pains: (Student ssh keys), student server accounts, cumbersome access
@@ -215,9 +218,10 @@ cd ~/COProjects </pre>
 <div class="slide">
 <h1>Gitolite server</h1>
 <ul>
-  <li>Host access, git and ssh-server install, and git404.cs.albany.edu dom.
-    name granted by sysadmin.)</li>
-  <li>All repositories are owned by one common user
+  <li>Host access, git and ssh-server install, and
+    <code><strong>git404.cs.albany.edu</strong></code> dom. name granted by
+    sysadmin.)</li>
+  <li>All repositories are owned by one Linux user
     (<strong><code>git404</code></strong> granted by sysadmin.)</li>
   <li>Students and staff use urls (development repos not shown):<br />
     <strong><code>git400@git400.cs.albany.edu:COProjects</code></strong><br />
@@ -242,14 +246,14 @@ cd ~/COProjects </pre>
 
 <div class="slide">
 <h1>Gitolite user administration</h1>
+
+<p>(The already assigned UAlbany NetIDs matching the course roster identify
+students.)</p>
 <pre>@prof =  ...
 @students = ...
 repo COProjects
     RW     = @prof
     R      = @students
-
-repo csi404
-    RW+     = @prof
 
 repo submissions/CREATOR/..*
      C      = @students @prof
@@ -258,10 +262,10 @@ repo submissions/CREATOR/..*
 <code><strong>CREATOR</strong></code> is gitolite's wildcard feature (requested
 by a professor!) When a student first pushes to
 <code><strong>submissions/</strong></code><em>NetID</em><code><strong>/RepoName</strong></code>
-GITOLITE (not me!) initializes the remote repo. <br />
+GITOLITE, (not me!) initializes the remote repo. <br />
 We <code><strong>@prof</strong></code> people get their names with<br />
 <code><strong>ssh git404@git404.cs.albany.edu info</strong></code> <br />
-TA (David Vadney) scripted multiple <code><strong>git clone</strong></code>
+TA (David Vadney) scripted the multiple <code><strong>git clone</strong></code>
 commands. <br />
 He and other TAs used <code><strong>gitk</strong></code> to browse commit
 messages and other student work. </div>
@@ -271,13 +275,14 @@ messages and other student work. </div>
 
 <h2>Open Source deployment requires experience, investigation, experimentation
 and testing</h2>
-It worked smoothly because Prof. Chaiken and his OS seniors and grad. students
-stumbled with the technology during the previous semester!<br />
+It worked smoothly because Prof. Chaiken and his previous semester OS seniors
+and grad. students stumbled with the technology!<br />
 Several days (in total) of gitolite, ssh, git etc. study were needed.<br />
 Prof. C. has sysadmin privileges on the server to fix a directory protection
 mistake and investigate problems.<br />
 Prof. C. handled git questions and problems quickly by email--about half dozen
-ssh problems and a dozen git questions/problems in total. 
+ssh problems and a dozen git questions/problems in total (eg. a few merge
+conflicts). 
 
 <h2>Faculty impression: Very favorable, no major complaints.</h2>
 </div>
@@ -360,7 +365,7 @@ href="http://www.cs.albany.edu/~sdc/CSI404/Spr15/SurveyResponses.pdf">Survey</a>
     </tr>
   </tbody>
 </table>
- </div>
+</div>
 <!--
 <div class="slide">
 <h1>t</h1>

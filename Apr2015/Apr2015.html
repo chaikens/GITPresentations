@@ -76,6 +76,113 @@ to assign and grade more effectively
 </ul>
 </div>
 
+<div class="slide">
+<h1>GIT use cases and subset</h1>
+<h2>Keys: </h2>
+<pre>
+ssh-keygen -t rsa
+mailx schaiken@albany.edu < .ssh/id_rsa.pub
+</pre>
+<h2>Clone:</h2>
+<pre>
+git clone git404@git404.cs.albany.edu:COProjects
+</pre>
+<h2>Unix/gcc commands:</h2>
+<pre>
+ls -l COProjects
+cd COProjects
+ls -l DataDemo
+ls -l DataDemo/DataDemo.c
+cd DataDemo
+ls
+less DataDemo.c
+gcc DataDemo.c -o DataDemo
+./DataDemo
+</pre>
+<h2>Edit, status, commit with automatic add:</h2>
+Change C program so it prints your name instead of the professor's<br/>
+<pre>git status</pre>
+Answer to yourself: Which file is GIT tracking?</br>
+Answer to yourself: Which file(s) is GIT not tracking?</br>
+<pre>git commit -a -m "Profs name replace by mine."</pre>
+Answer to yourself: How is the report from the git status commanded 
+BEFORE you committed (with -a) the change to DataDemo.c <br/>
+COMPARE to the status report commanded AFTER that commit?
+<h2>2nd new version, git status and git log</h2>
+Make the C program do input instead of use literal data.<br/>
+<pre>
+git status
+git log</pre>
+git commit -a -m "A one line informative comment about the commit"
+<pre>
+git status
+git log</pre>
+<h2>Unix script command</h2>
+<h2>push to get credit</h2>
+<pre>
+git push git404@git404.cs.albany.edu:submissions/YourNetID/COProjects master
+</pre>
+</div>
+
+<div class="slide">
+<h1>See what I turned in?</h1>
+<h2>EXPLANATIONS and WARNING were given!</h2>
+<pre>
+cd /tmp
+mkdir YourNetID
+cd YourNetID 
+</pre>
+The above two commands will keep other student's work out of your way
+because the /tmp directory is shared.
+<pre>
+git clone git404@git404.cs.albany.edu:submissions/YourNetID/COProjects
+cd COProjects
+cd
+cd COProjects
+</pre>
+OR
+<pre>
+cd ~/COProjects
+</pre>
+<pre>
+cd /tmp/YourNetID/COProjects 
+rm -rf /tmp/YourNetID
+cd ~/COProjects 
+</pre>
+</div>
+
+<div class="slide">
+<h1>Instructional materials</h1>
+</div>
+
+<div class="slide">
+<h1>Backend infrastructure--ssh+Gitolite+GIT</h1>
+</div>
+
+<div class="slide">
+<h1>Survey and lessons learned</h1>
+</div>
+
+<div class="slide">
+<h1>t</h1>
+</div>
+
+<div class="slide">
+<h1>t</h1>
+</div>
+
+<div class="slide">
+<h1>t</h1>
+</div>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
